@@ -37,3 +37,11 @@
   - **_npm run build_**
 - Con esto nos aparecerá la carpeta de:
   - _dist_ 
+- Abrimos la carpeta: _public_ y eliminamos el archivo: **.svg**
+- Abrimos: _src_ y eliminamos: 
+  - **assets**
+  - **App.css**
+- Del archivo: **App.tsx**
+  - Limpiamos o eliminamos las variables y lo que esta dentro del _return_
+  - Así mismo también eliminamos los _IMPORT_
+- Del archivo: _index.css_, borramos todo su contenido.
