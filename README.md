@@ -8,6 +8,7 @@
 - Node.js (20.19.0)
 - Vite
 - TailwindCSS
+  - **_npm install tailwindcss @tailwindcss/vite_**
 - TypeScript
 
 ## Creación del proyecto
@@ -58,3 +59,15 @@
   - El como nombrar tus clases tampoco es un problema.
   - Excelente Documentación.
   - La extensión de _VSC_ es excelente para el autocompletado.
+
+- Instalación:
+  - **_npm install tailwindcss @tailwindcss/vite_**
+- Después de la instalación aparecerá un archivo:
+  - **vite.config.ts**
+- Dentro del archivo tenemos que agregar la línea:
+  - _import tailwindcss from '@tailwindcss/vite';_
+- Dentro de ese archivo tenemos que agregar lo siguiente en la línea, solo complementamos con _tailwindcss_:
+  - **plugins: [react(), tailwindcss()],**
+- En el archivo: _index.css_, agregamos lo siguiente:
+  - **@import "tailwindcss";**
+- 
