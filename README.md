@@ -45,3 +45,16 @@
   - Limpiamos o eliminamos las variables y lo que esta dentro del _return_
   - Así mismo también eliminamos los _IMPORT_
 - Del archivo: _index.css_, borramos todo su contenido.
+
+### TAILWINDCSS
+
+- _TaildinwCSS_ es un _framework CSS_ basado en utilidades.
+- A diferencia de _Bootstrap_ donde una clase tiene diferentes propiedades de _CSS_, en _TaldinwCSS_ cada clase es una propiedad de _CSS_ con un nombre similar.
+
+  ## VENTAJAS
+
+  - Su ventaja principal es que escribes el código _CSS_ en tus componentes sin hojas externas.
+  - Tampoco es necesario preocuparte por la herencia en _CSS_.
+  - El como nombrar tus clases tampoco es un problema.
+  - Excelente Documentación.
+  - La extensión de _VSC_ es excelente para el autocompletado.
