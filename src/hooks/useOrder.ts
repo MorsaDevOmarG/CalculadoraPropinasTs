@@ -7,9 +7,22 @@ export default function useOrder() {
   const addItem = (item: MenuItem) => {
     // console.log("Agregar item", item);
 
-    const newItem = { ...item, quantity: 1 };
+    const itemExist = order.find(orderItem => orderItem.id === item.id);
 
-    setOrder([...order, newItem]);
+    if (itemExist) {
+      // console.log("El item ya existe en el orden");
+
+      const updatedOrder = order.map(orderItem => orderItem.id === item.id
+        ? { ...orderItem, quantity: orderItem.quantity + 1 }
+        : orderItem
+      );
+
+      setOrder(updatedOrder);
+    } else {
+      const newItem = { ...item, quantity: 1 };
+
+      setOrder([...order, newItem]);
+    }
   };
   console.log(order);
 
