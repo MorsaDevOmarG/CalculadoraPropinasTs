@@ -1,11 +1,12 @@
 import MenuItems from "./components/MenuItems";
 import { menuItems } from "./data/db";
 import useOrder from "./hooks/useOrder";
+import OrderContents from './components/OrderContents';
 
 function App() {
   // console.log(menuItems);
 
-  const { addItem } = useOrder();
+  const { order, addItem } = useOrder();
 
   return (
     <>
@@ -31,8 +32,12 @@ function App() {
           </div>
         </div>
 
-        <div>
-          <h2>Consumo</h2>
+        <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
+          {/* <h2>Consumo</h2> */}
+
+          <OrderContents
+            order={order}
+          />
         </div>
       </main>
     </>
