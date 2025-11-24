@@ -8,7 +8,7 @@ import TipPercentageForm from './components/TipPercentageForm';
 function App() {
   // console.log(menuItems);
 
-  const { order, addItem, removeItem } = useOrder();
+  const { order, tip, setTip, addItem, removeItem } = useOrder();
 
   return (
     <>
@@ -35,7 +35,9 @@ function App() {
 
           <OrderContents order={order} removeItem={removeItem} />
 
-          <TipPercentageForm />
+          <TipPercentageForm
+            setTip={setTip}
+          />
 
           <OrderTotals order={order} />
         </div>

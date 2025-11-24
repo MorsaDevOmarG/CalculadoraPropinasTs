@@ -1,3 +1,5 @@
+import type { Dispatch, SetStateAction } from "react";
+
 const tipOptions = [
   {
     id: "tip-10",
@@ -16,7 +18,13 @@ const tipOptions = [
   },
 ];
 
-export default function TipPercentageForm() {
+type TipPercentageFormProps = {
+  // setTip: React.Dispatch<React.SetStateAction<number>>
+  // setTip: Dispatch<React.SetStateAction<number>>
+  setTip: Dispatch<SetStateAction<number>>
+};
+
+export default function TipPercentageForm({setTip}: TipPercentageFormProps) {
   return (
     <div>
       <h3 className="font-black text-2xl">Propina:</h3>
@@ -25,7 +33,9 @@ export default function TipPercentageForm() {
         {tipOptions.map((tip) => (
           <div className="flex gap-2" key={tip.id}>
             <label htmlFor={tip.id}>{tip.label}</label>
-            <input type="radio" name="tip" id={tip.id} value={tip.value}/>
+
+            {/* Con el signo de: +, lo convierte a NUMBER */}
+            <input type="radio" name="tip" id={tip.id} value={tip.value} onChange={e => setTip(+e.target.value)}/>
           </div>
         ))}
       </form>
