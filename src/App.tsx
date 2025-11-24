@@ -3,6 +3,7 @@ import { menuItems } from "./data/db";
 import useOrder from "./hooks/useOrder";
 import OrderContents from './components/OrderContents';
 import OrderTotals from "./components/OrderTotals";
+import TipPercentageForm from './components/TipPercentageForm';
 
 function App() {
   // console.log(menuItems);
@@ -24,11 +25,7 @@ function App() {
 
           <div className="space-y-3 mt-10">
             {menuItems.map((item) => (
-              <MenuItems
-                key={item.id}
-                item={item}
-                addItem={addItem}
-              />
+              <MenuItems key={item.id} item={item} addItem={addItem} />
             ))}
           </div>
         </div>
@@ -36,14 +33,11 @@ function App() {
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
           {/* <h2>Consumo</h2> */}
 
-          <OrderContents
-            order={order}
-            removeItem={removeItem}
-          />
+          <OrderContents order={order} removeItem={removeItem} />
 
-          <OrderTotals
-            order={order}
-          />
+          <TipPercentageForm />
+
+          <OrderTotals order={order} />
         </div>
       </main>
     </>
