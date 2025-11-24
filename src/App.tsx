@@ -6,7 +6,7 @@ import OrderContents from './components/OrderContents';
 function App() {
   // console.log(menuItems);
 
-  const { order, addItem } = useOrder();
+  const { order, addItem, removeItem } = useOrder();
 
   return (
     <>
@@ -37,6 +37,7 @@ function App() {
 
           <OrderContents
             order={order}
+            removeItem={removeItem}
           />
         </div>
       </main>
