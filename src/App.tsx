@@ -39,7 +39,10 @@ function App() {
             setTip={setTip}
           />
 
-          <OrderTotals order={order} />
+          <OrderTotals
+            order={order}
+            tip={tip}
+          />
         </div>
       </main>
     </>
