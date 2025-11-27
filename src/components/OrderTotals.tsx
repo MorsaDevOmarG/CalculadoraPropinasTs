@@ -1,5 +1,5 @@
-import { useCallback, useMemo } from 'react';
-import { OrderItem } from '../types/index';
+import { useCallback } from 'react';
+import type { OrderItem } from '../types/index';
 import { formatCurrency } from '../helpers/index';
 
 type OrderTotalsProps = {

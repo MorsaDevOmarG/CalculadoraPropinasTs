@@ -1,5 +1,6 @@
 import { formatCurrency } from "../helpers";
-import { OrderItem, type MenuItem } from "../types";
+// import { OrderItem, type MenuItem } from "../types";
+import type { OrderItem, MenuItem } from "../types";
 
 type OrderContentsProps = {
   order: OrderItem[];
