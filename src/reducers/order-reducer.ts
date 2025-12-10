@@ -1,0 +1,52 @@
+import type { MenuItem, OrderItem } from "../types";
+
+export type OrderActions =
+  { type: 'add-item', payload: { item: MenuItem } } |
+  { type: 'remove-item', payload: { item: MenuItem } } |
+  { type: 'place-order' } |
+  { type: 'add-tip', payload: { value: Number } };
+
+export type OrderState = {
+  order: OrderItem[],
+  tip: number
+};
+
+export const initialState : OrderState = {
+  order: [],
+  tip: 0
+};
+
+export const orderReducer = (
+  state: OrderState = initialState,
+  action: OrderActions
+) => {
+  if (action.type === 'add-item') {
+
+    return {
+      ...state
+    };
+  }
+
+  if (action.type === 'remove-item') {
+
+    return {
+      ...state
+    };
+  }
+
+  if (action.type === 'place-order') {
+
+    return {
+      ...state
+    };
+  }
+
+  if (action.type === 'add-tip') {
+
+    return {
+      ...state
+    };
+  }
+
+  return state;
+};
