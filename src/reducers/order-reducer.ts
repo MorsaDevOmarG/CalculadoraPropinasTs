@@ -1,50 +1,66 @@
 import type { MenuItem, OrderItem } from "../types";
 
 export type OrderActions =
-  { type: 'add-item', payload: { item: MenuItem } } |
-  { type: 'remove-item', payload: { item: MenuItem } } |
-  { type: 'place-order' } |
-  { type: 'add-tip', payload: { value: Number } };
+  | { type: "add-item"; payload: { item: MenuItem } }
+  | { type: "remove-item"; payload: { item: MenuItem } }
+  | { type: "place-order" }
+  | { type: "add-tip"; payload: { value: Number } };
 
 export type OrderState = {
-  order: OrderItem[],
-  tip: number
+  order: OrderItem[];
+  tip: number;
 };
 
-export const initialState : OrderState = {
+export const initialState: OrderState = {
   order: [],
-  tip: 0
+  tip: 0,
 };
 
 export const orderReducer = (
   state: OrderState = initialState,
   action: OrderActions
 ) => {
-  if (action.type === 'add-item') {
+  if (action.type === "add-item") {
+    const itemExist = state.order.find((orderItem) => orderItem.id === action.payload.item.id);
+
+    let updatedOrder : OrderItem[] = [];
+
+    if (itemExist) {
+      // console.log("El item ya existe en el orden");
+
+      updatedOrder = state.order.map((orderItem) =>
+        orderItem.id === action.payload.item.id
+          ? { ...orderItem, quantity: orderItem.quantity + 1 }
+          : orderItem
+      );
+
+    } else {
+      const newItem: OrderItem = { ...action.payload.item, quantity: 1 };
+      
+      updatedOrder = [...state.order, newItem];
+    }
 
     return {
-      ...state
+      ...state,
+      order: updatedOrder
     };
   }
 
-  if (action.type === 'remove-item') {
-
+  if (action.type === "remove-item") {
     return {
-      ...state
+      ...state,
     };
   }
 
-  if (action.type === 'place-order') {
-
+  if (action.type === "place-order") {
     return {
-      ...state
+      ...state,
     };
   }
 
-  if (action.type === 'add-tip') {
-
+  if (action.type === "add-tip") {
     return {
-      ...state
+      ...state,
     };
   }
 
