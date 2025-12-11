@@ -48,7 +48,8 @@ function App() {
               <OrderContents
                 // order={order}
                 order={state.order}
-                removeItem={removeItem}
+                // removeItem={removeItem}
+                dispatch={dispatch}
               />
 
               <TipPercentageForm

@@ -47,8 +47,13 @@ export const orderReducer = (
   }
 
   if (action.type === "remove-item") {
+    // setOrder(order.filter((item) => item.id !== id));
+
+    const order = state.order.filter((item) => item.id !== action.payload.id);
+
     return {
       ...state,
+      order
     };
   }
 
