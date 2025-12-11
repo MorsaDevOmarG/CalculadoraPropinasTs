@@ -42,13 +42,26 @@ function App() {
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
           {/* <h2>Consumo</h2> */}
 
-          {order.length ? (
+          {/* {order.length ? ( */}
+          {state.order.length ? (
             <>
-              <OrderContents order={order} removeItem={removeItem} />
+              <OrderContents
+                // order={order}
+                order={state.order}
+                removeItem={removeItem}
+              />
 
-              <TipPercentageForm setTip={setTip} tip={tip} />
+              <TipPercentageForm
+                setTip={setTip}
+                tip={tip}
+              />
 
-              <OrderTotals order={order} tip={tip} placeOrder={placeOrder} />
+              <OrderTotals
+                // order={order}
+                order={state.order}
+                tip={tip}
+                placeOrder={placeOrder}
+              />
             </>
           ) : (
             <p className="text-center">La orden esta vacía</p>
