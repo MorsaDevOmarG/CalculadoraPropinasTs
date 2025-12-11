@@ -53,14 +53,17 @@ function App() {
               />
 
               <TipPercentageForm
-                setTip={setTip}
-                tip={tip}
+                // setTip={setTip}
+                dispatch={dispatch}
+                // tip={tip}
+                tip={state.tip}
               />
 
               <OrderTotals
                 // order={order}
                 order={state.order}
-                tip={tip}
+                // tip={tip}
+                tip={state.tip}
                 placeOrder={placeOrder}
               />
             </>
